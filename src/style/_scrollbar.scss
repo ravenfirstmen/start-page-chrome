@@ -1,0 +1,21 @@
+.scrollbar {
+    overflow-y: auto;
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $blue;
+        visibility: hidden;
+    }
+
+    &::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+
+    &:active, &:focus, &:hover {
+        &::-webkit-scrollbar-thumb {
+            visibility: visible;
+        }
+    }
+
+  }
+  

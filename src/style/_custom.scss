@@ -1,0 +1,95 @@
+// Customize boostrap colors
+$gray-200: $subtext1;
+$gray-300: $subtext0;
+$gray-400: $overlay2;
+$gray-500: $overlay1;
+$gray-600: $overlay0;
+$gray-700: $surface2;
+$gray-800: $surface1;
+$gray-900: $surface0;
+
+$body-color: $text;
+$body-bg: $base;
+$colors: (
+  "blue":       $blue,
+  "indigo":     $lavender,
+  "purple":     $flamingo,
+  "pink":       $pink,
+  "red":        $red,
+  "orange":     $peach,
+  "yellow":     $yellow,
+  "green":      $green,
+  "teal":       $teal,
+  "cyan":       $sky,
+  "gray":       $surface1,
+  "gray-dark":  $crust
+);
+$black:    #000 !default;
+
+$border-radius: 0;
+$border-color: $gray-800;
+$input-focus-box-shadow: 0;
+
+$tooltip-color: $text;
+$tooltip-bg: $crust;
+$tooltip-opacity: 1;
+
+$card-border-width: 0;
+$card-cap-bg: transparent;
+$card-bg: rgba($base, .95);
+$card-box-shadow: 0 1rem 3rem rgba($black, .35);
+
+$card-cap-padding-x:                1rem;
+$card-cap-padding-y:                $card-cap-padding-x;
+
+// clustom class
+.w-90 {
+  width: 90%;
+}
+.mxh-65 {
+  max-height: 65vh;
+}
+.mxh-70 {
+  max-height: 70vh;
+}
+.mxh-75 {
+  max-height: 75vh;
+}
+.mxh-80 {
+  max-height: 80vh;
+}
+.mxh-90 {
+  max-height: 90vh;
+}
+.mih-65 {
+  min-height: 65vh;
+}
+.mih-70 {
+  min-height: 70vh;
+}
+.mih-75 {
+  min-height: 75vh;
+}
+.mih-80 {
+  min-height: 80vh;
+}
+
+
+$font-family-monospace: "JetBrains Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-sans-serif: $font-family-monospace;
+
+body {
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+}
+
+// .input-group-text {
+//   input[type="text"] {
+//     opacity: 0;
+//   }
+// }
