@@ -19,19 +19,19 @@ class Search {
   async cachedBookmarks(): Promise<chrome.bookmarks.BookmarkTreeNode[]> {
     if (!this.bookmarks || !this.bookmarks.length) {
       let flattenedBookmarks: chrome.bookmarks.BookmarkTreeNode[] = []
-      ;[this.bookmarks, flattenedBookmarks] = await new Bookmarks().getFromStartPage()
+      ;[this.bookmarks, flattenedBookmarks] =
+        await new Bookmarks().getFromStartPage()
       this.prepareFuseSearch(flattenedBookmarks)
     }
     return this.bookmarks
   }
 
-
   fuseSearch(term: string): chrome.bookmarks.BookmarkTreeNode[] {
     const result = this.fuse!.search(term).map((i) => i.item)
-  
+
     return [{ id: '', title: 'Bookmarks...', children: result }]
   }
-  
+
   prepareFuseSearch(items: chrome.bookmarks.BookmarkTreeNode[]) {
     const options = {
       includeScore: false,
