@@ -1,8 +1,4 @@
-import { backgroundImagesService } from "./background-images";
-import { searchService } from "./search";
+import { backgroundImagesService } from './background-images'
+import { searchService } from './search'
 
-
-export {
-    backgroundImagesService,
-    searchService
-}
+export { backgroundImagesService, searchService }

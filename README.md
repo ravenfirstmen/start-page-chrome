@@ -6,4 +6,4 @@ Display the bookmarks hierarchy off a bookmarks folder (currently with exact nam
 
 # Tech used
 
-* Vue 3 + TypeScript + Vite
+- Vue 3 + TypeScript + Vite

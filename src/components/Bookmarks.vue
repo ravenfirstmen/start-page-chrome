@@ -8,26 +8,39 @@ const bookmarks = ref([])
 const term = ref('')
 
 onMounted(async () => {
-  await reset();
+  await reset()
 })
 
 async function reset() {
-  term.value = null;
+  term.value = null
 }
 
 watch(term, async (val) => {
-    bookmarks.value = await searchService.search(val);
+  bookmarks.value = await searchService.search(val)
 })
-
 </script>
 
 <template>
   <div class="card-body container-fluid">
     <div class="row">
       <div class="col input-group mb-3 pb-3">
-        <span class="input-group-text border-0 border-bottom bg-transparent ps-0"><i class="bi bi-search"></i></span>
-        <input v-model="term" v-focus type="text" class="form-control border-0 bg-transparent border-bottom">
-        <button class="btn shadow-none border-bottom" type="button" @click="reset">
+        <span
+          class="input-group-text border-0 border-bottom bg-transparent ps-0"
+        >
+          <i class="bi bi-search"></i>
+        </span>
+        <input
+          v-model="term"
+          v-focus
+          type="text"
+          class="form-control border-0 bg-transparent border-bottom"
+          @keyup.esc="reset"
+        />
+        <button
+          class="btn shadow-none border-bottom"
+          type="button"
+          @click="reset"
+        >
           <i class="bi bi-x-lg"></i>
         </button>
         <!-- <span class="input-group-text border-0 border-bottom bg-transparent pe-0">
@@ -37,10 +50,21 @@ watch(term, async (val) => {
       </div>
     </div>
     <div class="row align-items-start">
-      <div v-for="item in bookmarks" :key="item.id" class="col text-truncate mih-65 mxh-65 scrollbar">
+      <div
+        v-for="item in bookmarks"
+        :key="item.id"
+        class="col text-truncate mih-65 mxh-65 scrollbar"
+      >
         <h4 class="mb-3 text-primary">{{ item.title }}</h4>
-        <ul role="list" class="list-unstyled">
-          <BookmarkItem v-for="child in item.children" :key="child.id" :model="child"></BookmarkItem>
+        <ul
+          role="list"
+          class="list-unstyled"
+        >
+          <BookmarkItem
+            v-for="child in item.children"
+            :key="child.id"
+            :model="child"
+          ></BookmarkItem>
         </ul>
       </div>
     </div>

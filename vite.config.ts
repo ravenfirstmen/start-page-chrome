@@ -5,7 +5,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { URL, fileURLToPath } from 'url'
 import { defineConfig } from 'vite'
-import { viteStaticCopy } from 'vite-plugin-static-copy';
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 import manifest from './manifest.config'
 
 // https://vitejs.dev/config/
@@ -58,18 +58,18 @@ export default defineConfig({
       targets: [
         {
           src: 'manifest.json',
-          dest: '.'
+          dest: '.',
         },
         {
           src: 'src/assets/icons/**.png',
-          dest: './icons'
+          dest: './icons',
         },
         {
           src: 'src/assets/wallpaper/**.jpg',
-          dest: './wallpaper'
+          dest: './wallpaper',
         },
-      ]
-    })    
+      ],
+    }),
   ],
   build: {
     rollupOptions: {
@@ -78,8 +78,10 @@ export default defineConfig({
         'service-worker': './src/background/index.ts',
       },
       output: {
-        entryFileNames: assetInfo =>
-          assetInfo.name === 'service-worker' ? 'service-worker.js' : 'assets/[name]-[hash].js',
+        entryFileNames: (assetInfo) =>
+          assetInfo.name === 'service-worker'
+            ? 'service-worker.js'
+            : 'assets/[name]-[hash].js',
       },
     },
     minify: 'terser',

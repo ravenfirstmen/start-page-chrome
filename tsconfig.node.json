@@ -14,9 +14,5 @@
     "resolveJsonModule": true,
     "types": ["webextension-polyfill", "chrome"]
   },
-  "include": [
-    "package.json",
-    "vite.config.ts",
-    "manifest.config.ts"
-  ]
+  "include": ["package.json", "vite.config.ts", "manifest.config.ts"]
 }

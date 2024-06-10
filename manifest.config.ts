@@ -19,7 +19,7 @@ export default defineManifest(async (env) => ({
   manifest_version: 3,
   // key: '',
   action: {
-    default_icon: "src/assets/icons/bookmark.png"
+    default_icon: 'src/assets/icons/bookmark.png',
   },
   background: {
     service_worker: 'src/background/index.ts',
@@ -32,16 +32,16 @@ export default defineManifest(async (env) => ({
   //   },
   // ],
   chrome_url_overrides: {
-    newtab:"index.html",
-    homepage:"index.html"
+    newtab: 'index.html',
+    homepage: 'index.html',
   },
   offline_enabled: false,
   host_permissions: [],
-  permissions: ["activeTab", "tabs", "bookmarks", "storage", "alarms"],
+  permissions: ['activeTab', 'tabs', 'bookmarks', 'storage', 'alarms'],
   icons: {
-    "16": "src/assets/icons/bookmark_16.png",
-    "32": "src/assets/icons/bookmark_32.png",
-    "48": "src/assets/icons/bookmark_48.png",
-    "128": "src/assets/icons/bookmark_128.png"
+    '16': 'src/assets/icons/bookmark_16.png',
+    '32': 'src/assets/icons/bookmark_32.png',
+    '48': 'src/assets/icons/bookmark_48.png',
+    '128': 'src/assets/icons/bookmark_128.png',
   },
 }))
