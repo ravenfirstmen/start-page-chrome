@@ -7,11 +7,11 @@ const bookmarks = ref([])
 
 const term = ref('')
 
-onMounted(async () => {
-  await reset()
+onMounted(() => {
+  reset()
 })
 
-async function reset() {
+function reset() {
   term.value = null
 }
 
