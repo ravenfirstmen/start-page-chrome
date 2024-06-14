@@ -36,6 +36,7 @@ const tooltipTitle = computed(() => {
         :data-bs-title="tooltipTitle"
         class="link-light text-nowrap text-decoration-none"
         data-bs-placement="left"
+        target="_blank"
       >
         {{ model.title }}
       </a>
