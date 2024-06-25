@@ -7,8 +7,6 @@ export const broker = async (
   sender: chrome.runtime.MessageSender,
   sendResponse: MessageResponse<unknown>
 ) => {
-  console.log('message: ' + message.type)
-
   if (sender.id != chrome.runtime.id) {
     // from the same extension
     return false

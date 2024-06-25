@@ -1,9 +1,8 @@
-import { GetBookmarksMessageResponse } from '../shared'
+import { GetBookmarksMessageResponse, RefreshBookmarksMessage } from '../shared'
 
 export const handleGetBookmarks = async (
   sendResponse: GetBookmarksMessageResponse
 ) => {
-  console.log('Received get bookmarks request')
   sendResponse(cache)
   return true
 }
@@ -17,11 +16,19 @@ export const handleOnInstall = async (
 }
 
 export const handleOnStartup = async () => {
-  console.log('[background.js] onStartup')
+  console.log(`Worker started...`)
   await loadBookmarks()
   console.log('Cache refreshed...')
   await startHeartbeat()
 }
+
+// other events
+// TODO: add logic to invalidate if the 'Startpage' is changed
+chrome.bookmarks.onChanged.addListener(async () => await loadBookmarks())
+chrome.bookmarks.onChildrenReordered.addListener(async () => await loadBookmarks())
+chrome.bookmarks.onCreated.addListener(async () => await loadBookmarks())
+chrome.bookmarks.onMoved.addListener(async () => await loadBookmarks())
+chrome.bookmarks.onRemoved.addListener(async () => await loadBookmarks())
 
 // private stuff
 

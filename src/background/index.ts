@@ -6,9 +6,9 @@ chrome.runtime.onInstalled.addListener(handleOnInstall)
 
 chrome.runtime.onStartup.addListener(handleOnStartup)
 
+
 // just for debug purposes
 chrome.runtime.onSuspend.addListener(() => {
-  console.log('[background.js] onSuspend')
 })
 
 chrome.runtime.onMessage.addListener(broker)

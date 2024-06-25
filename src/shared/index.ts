@@ -1,5 +1,6 @@
 enum MessageType {
   GET_BOOKMARKS = 'GET_BOOKMARKS',
+  REFRESH_BOOKMARKS = 'REFRESH_BOOKMARKS',
   SET_BACKGROUND_IMAGE = 'SET_BACKGROUND_IMAGE',
   START_BACKGROUND_IMAGE_ROTATION = 'START_BACKGROUND_IMAGE_ROTATION',
 }
@@ -24,6 +25,7 @@ class SetbackgroundImageMessage extends MessageData<string> {
 }
 
 const GetBookmarksMessage = new Message(MessageType.GET_BOOKMARKS)
+const RefreshBookmarksMessage = new Message(MessageType.REFRESH_BOOKMARKS)
 const StartBackgroundImageRotationMessage = new Message(
   MessageType.START_BACKGROUND_IMAGE_ROTATION
 )
@@ -40,6 +42,7 @@ export {
   MessageData,
   SetbackgroundImageMessage,
   GetBookmarksMessage,
+  RefreshBookmarksMessage,
   StartBackgroundImageRotationMessage,
 }
 
